@@ -111,7 +111,13 @@
 \title{Measurement and Analysis of Child Pornography Trafficking on P2P Networks\nocite{Hurley}}
 \subtitle{}
 
+\def\logounicamp{%
+\resizebox{!}{7.5ex}{\includegraphics{unicamp.pdf}}
+}
 
+\def\logoabaco{%
+\resizebox{!}{7.5ex}{\includegraphics{abaco.pdf}}
+}
 
 \institute{Instituto de Computação - Unicamp}
 
@@ -122,7 +128,8 @@
 \def\defn#1{{\color{red} #1}}
 % Insere o numero da pagina no rodape.
 \setbeamertemplate{footline}[text line]{%
-  \parbox{\linewidth}{\vspace*{-8pt}IC - Instituto de Computação\hfill\inserttitle\hfill\insertpagenumber}}
+  \parbox{\linewidth}{\vspace*{-8pt}\logounicamp\hfill\institute\hfill\inserttitle
+  \hfill\logoabaco\hfill\insertpagenumber}}
 \setbeamertemplate{navigation symbols}{}
 
 \author{Ryan Hurley, Swagatika Prusty, Hamed Soroush, Robert J. Walls
