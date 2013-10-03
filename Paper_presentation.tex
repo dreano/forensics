@@ -120,8 +120,7 @@
 \subject{Talks}
 
 \def\defn#1{{\color{red} #1}}
-% Insert frame number at bottom of the page.
-%\setbeamertemplate{footline}[frame number]
+% Insere o numero da pagina no rodape.
 \setbeamertemplate{footline}[text line]{%
   \parbox{\linewidth}{\vspace*{-8pt}IC - Instituto de Computação\hfill\inserttitle\hfill\insertpagenumber}}
 \setbeamertemplate{navigation symbols}{}
@@ -141,9 +140,30 @@ Marc Liberatore, Brian Lynn, Janis Wolak}
   \tableofcontents
 \end{frame}
 
-\section{Introduction}
-\begin{frame}
+\section{Introduction} 
+%este é um slide de exemplo
+\begin{frame} %começa um novo slide (frame)
 
+\begin{block}{Bloco} 
+
+%começa um novo bloco (caixa no slide)
+
+O que eu escrever aqui aparece no bloco.
+
+\end{block} %finaliza o bloco
+
+\begin{block}{Outro bloco}
+
+Posso criar vários blocos em um \textit{frame}...
+E fazer com que apareçam um de cada vez...
+
+\end{block} \pause %o comando "\pause" insere uma pausa no slide
+
+\begin{block}{Bloco oculto}
+
+Este bloco só vai aparecer quando eu "clicar" ou pressionar uma tecla.
+
+\end{block}
 
 \end{frame}
 
