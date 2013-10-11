@@ -127,6 +127,10 @@
 
 \def\defn#1{{\color{red} #1}}
 % Insere o numero da pagina no rodape.
+
+\setbeamertemplate{headline}[text line]{%
+  \parbox{\linewidth}{\vspace*{8pt}\hfill\insertsection}}
+
 \setbeamertemplate{footline}[text line]{%
   \parbox{\linewidth}{\vspace*{-8pt}\logounicamp\hfill\institute\hfill\inserttitle
   \hfill\logoabaco\hfill\insertpagenumber}}
@@ -174,6 +178,7 @@ Este bloco só vai aparecer quando eu "clicar" ou pressionar uma tecla.
 
 \end{frame}
 
+\section{Second Section}
 \begin{frame}{Slide com \textit{bullets}}
 
 \begin{itemize} 
@@ -184,7 +189,9 @@ Este bloco só vai aparecer quando eu "clicar" ou pressionar uma tecla.
 
 \end{frame}
 
+\section{References}
 \begin{frame} %%[allowframebreaks]
+
 \frametitle{Bibliography}
 
 \bibliographystyle{unsrt}
