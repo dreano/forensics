@@ -6,6 +6,7 @@
 \usepackage{times}
 \usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
+\setbeamertemplate{caption}[numbered]
 \mode<presentation>
 
 
@@ -146,6 +147,11 @@ Marc Liberatore, Brian Lynn, Janis Wolak}
     \tableofcontents[currentsection]
   \end{frame}
   \addtocounter{framenumber}{-1}% If you don't want them to affect the slide number
+}
+
+\addto\captionsportuguese{
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
 }
 
 \begin{document}
@@ -329,12 +335,11 @@ not the traditional security attacker model.
 \begin{frame}
 \begin{block}{We can see this result under the tables:}
 
-\begin{table} 
-
+\begin{table}[H]
 \centering
 
 \caption{Sizes of each GUID subgroup} 
-
+\label{tab:table2}
 \begin{tabular}{ccc}\hline & \multicolumn{2}{c}{Network} \\
 
 \hline 
@@ -354,7 +359,6 @@ Top 10\% by Contribution & 77,595 (10\%) & 189,581 (10\%)\\
 
 \hline
 \end{tabular}
-\label{table2}
 
 \end{table} 
 
@@ -371,7 +375,7 @@ Top 10\% by Contribution & 77,595 (10\%) & 189,581 (10\%)\\
 \centering
 
 \caption{Numbers of IP addresses per network sharing FOI} 
-
+\label{tab:table3}
 \begin{tabular}{cccc}\hline & \multicolumn{3}{c}{IP Adresses} \\
 
 \hline 
@@ -388,7 +392,7 @@ IRC & 88,658 & 245 & 746 \\
 \hline
 
 \end{tabular}
-\label{table3}
+
 
 \end{table}
 
