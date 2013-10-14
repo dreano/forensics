@@ -140,6 +140,14 @@
 Jeannie Albrecht, Emmanuel Cecchet, Brian Neil Levine
 Marc Liberatore, Brian Lynn, Janis Wolak}
 
+\AtBeginSection[]{%
+  \begin{frame}
+    \frametitle{Schedule}
+    \tableofcontents[currentsection]
+  \end{frame}
+  \addtocounter{framenumber}{-1}% If you don't want them to affect the slide number
+}
+
 \begin{document}
 
 \begin{frame}
@@ -385,6 +393,20 @@ IRC & 88,658 & 245 & 746 \\
 \end{table}
 
 \end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{itemize}
+
+\item[\checkmark]The differences of each subgroup to the set of all GUIDs are significant (p < 0.001).
+
+\item[\checkmark]Below we provide characteristics of each subgroup, and details of the behavior of each. 
+
+\item[\checkmark]For example, we show that GUIDs using TOR to share FOI use it irregularly, and therefore their true IP addresses are easily identifiable. 
+
+\end{itemize}
 
 \end{frame}
 
