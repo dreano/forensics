@@ -6,7 +6,6 @@
 \usepackage{times}
 \usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
-\usepackage{bibentry}
 \setbeamertemplate{caption}[numbered]
 \mode<presentation>
 
@@ -156,9 +155,6 @@ Marc Liberatore, Brian Lynn, Janis Wolak}
 }
 
 \begin{document}
-
-\bibliographystyle{unsrt}
-\nobibliography{refs}
 
 \begin{frame}
   \titlepage
@@ -360,10 +356,94 @@ not the traditional security attacker model.
 \section{Availability and Resilience}
 \begin{frame}
 
+\begin{itemize}
+
+\item[\checkmark]Law enforcement’s limited resources and time.
+
+\item[\checkmark]Need triage, focusing on greater impact.
+
+\item[\checkmark]Goal: Decrease the availability of FOI.
+
+\end{itemize}
+
 \end{frame}
 
 \section{FOI Redundancy and Availability}
 \begin{frame}
+
+\begin{block}{File Redundancy Across GUIDs}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{FOI_redundancy}
+\caption{Count of how many IDs are sharing the same file}.
+\label{fig:FOI_redundancy}
+\end{figure}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{File Redudancy Across GUIDs}
+
+\begin{itemize}
+
+\item[\checkmark]Low redudancy of FOIs across the GUIDs:
+	\begin{itemize}
+	
+	\item 90\% of Gnutella files, shared by at most 20 Ids.
+	
+	\end{itemize}
+
+
+\item[\checkmark]Files in common between networks have more redudancy.
+
+\item[\checkmark]Apparently, a good strategy would be to prioritize the users with less redundant FOI.
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{File Availability Across Days}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{FOI_availability}
+\caption{Count of days a file has been found online}.
+\label{fig:FOI_availability}
+\end{figure}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{File Availability Across Days}
+
+\begin{itemize}
+
+\item[\checkmark]Gnutella have a lower availability than eMule:
+
+	\begin{itemize}
+
+	\item Only 30\% of Gnutella files are available more than 10 days	.
+	
+	\end{itemize}
+
+\item[\checkmark]Files available fewer days, tend to be also less redundant.
+
+\item[\checkmark]Common files also have a greater availability.
+
+\end{itemize}
+
+\end{block}
 
 \end{frame}
 
@@ -516,10 +596,54 @@ IRC & 88,658 & 245 & 746 \\
 \section{Measurement Limitations}
 \begin{frame}
 
+\begin{itemize}
+
+\item[\checkmark]Files in U.S mainly. Others countries are underestimated.
+
+\item[\checkmark]No total coverage of files of a certain GUID.
+
+\item[\checkmark]Peers that are rarely online or have few files may have been missed.
+
+\item[\checkmark]Greater number of GUIDs because of different installations.
+
+\item[\checkmark]Peers may have been removed because of police action.
+
+\end{itemize}
+
 \end{frame}
 
 \section{Related Work}
 \begin{frame}
+
+\begin{itemize}
+
+\item[\checkmark]Ecosystems and Underground Economies:
+
+	\begin{itemize}
+
+	\item Economic characteristics of Network-based ecosystems.
+	
+	\item May explain the irregular use of Tor encountered.	
+	
+	\end{itemize}
+	
+\item[\checkmark]Content Availability in P2P Systems:
+
+	\begin{itemize}
+	
+	\item Research of general use of P2P.	
+	
+	\end{itemize}
+
+\item[\checkmark]CP Trafficking in P2P Systems:
+
+	\begin{itemize}
+	
+	\item Previous work are shallow on understanding how these files are being shared.
+	
+	\end{itemize}
+
+\end{itemize}
 
 \end{frame}
 
