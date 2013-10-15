@@ -169,7 +169,40 @@ Marc Liberatore, Brian Lynn, Janis Wolak}
 \section{Introduction} 
 %este é um slide de exemplo
 \begin{frame} %começa um novo slide (frame)
+\begin{block}{Introduction}
+\begin{itemize} 
 
+\item[\checkmark] Peer-to-peer (p2p) networks are the most popular mechanism for the criminal acquisition and distribution of child sexual exploitation imagery(CP).
+\item[\checkmark] Observations of peers sharing known CP on the eMule and Gnutella networks.
+\item[\checkmark] Investigating CP trafficking online.
+\item[\checkmark] Two primary goals:
+
+\begin{itemize}
+
+\item Stop the distribution of CP.
+\item Catch child molesters.
+
+\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+
+\item[\checkmark] Numerous studies of p2p networks have explored the availability, performance, and traffic characteristics of file sharing.
+\item[\checkmark] Triage fundamental problem.
+\item[\checkmark] Key contributions:
+
+\begin{itemize}
+
+\item Removing peers with the largest contributions.
+\item Examine subgroups of agressive peers.
+\item Tor project.
+\item Tools use in all U.S states and result.
+
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 \section{Criminal Investigation}
@@ -512,6 +545,135 @@ Ares (no file data) & 5/31/2011–9/18/2011 & N/A & N/A & 17,706,744\\
 \item[\checkmark]Common files also have a greater availability.
 
 \end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{Law Enforcement Strategy}
+\begin{itemize}
+
+\item[\checkmark] Investigators have a global, historical view of GUIDs and their corpora, including known FOI and other files. 
+\item[\checkmark] An enormous set of perpetrators are active every day
+around the world.
+\item[\checkmark] Evaluate four greedy heuristics aimed at reducing the availability of CP by removing peers.
+
+\begin{itemize}
+
+\item Removing peers that were observed most often.
+\item Removing peers with the largest corpus size.
+\item Removing peers with the largest contribution to availability.
+\item Removing peers selected randomly, as a baseline.
+
+\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Comparison of the Efficiency of heuristic}
+\begin{itemize}
+
+\item[\checkmark] The Figure(Top GUIDs Removed) show a percentage of GUIDs removed according to different
+heuristics:
+
+\begin{itemize}
+
+\item[\checkmark] Random.
+\item[\checkmark] Number of days observed. 
+\item[\checkmark] Corpus size.
+\item[\checkmark] Contribution to file availability on Gnutella and eMule.
+\item[\checkmark] 10 or fewer FOI.
+\item[\checkmark] Peers in the U.S.
+
+\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+
+\begin{block}{Percentage of Top GUIDs Removed}
+\begin{itemize}
+
+\item[\checkmark] Removed the top 0.01, 0.1, 1, and 10 percent of GUIDs according to each heuristic.
+\item[\checkmark] In Gnutella, the Corpus and Contribution heuristics achieve equal results when 0.113 percent of GUIDs are removed. 
+\item[\checkmark] The impact of removing 100 percent of peers with 10 or fewer
+FOI, and 100 percent of peers in the U.S.
+
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Percentage of Top GUIDs removed}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{Top_GUIDs_Removed}
+\caption{Percentage of Top GUIDs removed}
+\label{fig:Top_GUIDs_Removed}
+\end{figure}
+
+\end{block}
+
+\end{frame}
+
+%-Availability and resilience------------------------------------------------
+
+\begin{frame}
+\begin{block}{Impact of Geography on Availability}
+\begin{itemize}
+\item[\checkmark] The tools and methodologies is based on the U.S. law enforcement, and the files they are looking for are arguably tuned to U.S. perpetrators. Because the law enforcement agents are limited by jurisdiction.
+\item[\checkmark] Only a small majority of top Gnutella GUIDs 57 out of 100 are located in the U.S. Just 30 percent of files are unavailable (internationally) after removing all GUIDs in the U.S.
+\item[\checkmark] Within the U.S., the problem is similarly large in scope. The top 5 percent of GUIDs in the U.S. comprises a set of 14,410 GUIDs, each with a corpus of at least 40 known FOI. 
+
+\end{itemize}
+\end{block}
+\end{frame}
+%-Availability and resilience------------------------------------------------
+
+\begin{frame}
+\begin{block}{Impact of Low-Sharing GUIDs on Availability}
+\begin{itemize}
+\item[\checkmark] A large portion of GUIDs have comparatively few files. 
+\item[\checkmark] Reasons peers may appear to have few files.
+\begin{itemize}
+\item[\checkmark] They may be downloading FOI and not subsequently sharing them.
+\item[\checkmark] They may have downloaded the files incidental to other activities.
+\item[\checkmark] They may have downloaded the files incidental to other activities.
+\item[\checkmark] They may simply be sharing a smaller library.
+\end{itemize}
+
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Files in Corpus}
+\begin{itemize}
+\item[\checkmark] CDF showing the corpus size per GUID.
+\begin{itemize}
+\item[\checkmark] The blue line show all FOI observed in Gnutella.
+\item[\checkmark] The black line (“Gnutella Browse GUIDs”) show the corpus size distribution for all files seen at GUIDs whose libraries were browsed.
+\item[\checkmark] The green line shows the distribution of FOIs within those browses.
+\item[\checkmark] The red line show all FOI observed in eMulle.
+\end{itemize}
+\end{itemize}
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Files in Corpus}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{Files_in_Corpus}
+\caption{Files in Corpus}
+\label{fig:Files_in_Corpus}
+\end{figure}
 
 \end{block}
 
