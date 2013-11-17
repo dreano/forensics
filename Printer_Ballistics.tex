@@ -61,35 +61,15 @@ Here goes the state-of-the-art research (talk about prior work for solving the s
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Proposed Solution}
-Talk about the proposed solution for the selected problem. 
+
+Our solution consist in getting the image of characters selected from scanned documents in grayscale, extract its properties of contrast, correlation, energy and homogeneity - creating a co-occurrence matrix - and cluster them by machine learning algorithms.
+
+The characters chosen for this work were "e" and "t", both in lowercase, because they are, respectively, the first and second most common letters in texts written in English~\cite{Letter_Frequency}.
+
+Due to the fact that all scanned documents come from laser printers, it was necessary to take some precautionary measures. Laser printers are known as ''page printers'', while dot matrix printers and inkjet printers are called ''line printers''. This is a crucial difference, and should be considered for more careful study. Line printers print documents line by line from the top of the sheet, keeping a characteristic pattern which periodically repeats for each paper feed. That is, any line printed by this printer model will have basically the same characteristics, regardless of their vertical location in the sheet of paper.
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiments and Discussion}
-Talk about the experiments carried out and the obtained results. 
-
-Examples of citations~\cite{Ni_2008, Ni_2009}. For direct citations use something like: 
-
-\CITEONE{Silva}{Silva_2010} for papers with one author.
-\CITETWO{Silva}{Souza}{Silva_2010b} for papers with two authors.
-\CITEN{Silva}{Silva_2010c} for papers with three or more authors.
-
-Example of a figure of one column. 
-\begin{figure}
-\begin{center}
-	\includegraphics[width=0.99\columnwidth]{example-figure}
-	\caption{A figure example spanning one column only.\label{fig:label}}   
-\end{center} 
-\end{figure}   
-
-Example of a figure spanning two columns. 
-\begin{figure*}
-\begin{center}
-	\includegraphics[width=0.99\textwidth]{example-figure-spanned}
-	\caption{A figure example spanning two columns.\label{fig:label2}}   
-\end{center} 
-\end{figure*}
-
-Example of a table spanning only one column: 
 
 \begin{table}
 \begin{center}
@@ -110,29 +90,10 @@ Samsung-CLP315 & 28 \\
 \end{center}
 \end{table}
 
-Example of a table spanning two columns: 
-
-\begin{table*}
-\begin{center}
-    \begin{tabular}{ | l | l | l | p{8cm} |}
-    \hline
-    Day & Min Temp & Max Temp & Summary \\ \hline
-    Monday & 11C & 22C & A clear day with lots of sunshine.  
-    However, the strong breeze will bring down the temperatures. \\ \hline
-    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
-    across most of Scotland and Northern Ireland,
-    but rain reaching the far northwest. \\ \hline
-    Wednesday & 10C & 21C & Rain will still linger for the morning.
-    Conditions will improve by early afternoon and continue
-    throughout the evening. \\
-    \hline
-    \end{tabular}
-\end{center}    
-\end{table*}
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions and Future Work}
-Present the main conclusions of the work as well as some future directions for other people interested in continuing this work. 
+
 
 %%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\small
