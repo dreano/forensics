@@ -66,12 +66,21 @@ Our solution consist in getting the image of characters selected from scanned do
 
 The characters chosen for this work were "e" and "t", both in lowercase, because they are, respectively, the first and second most common letters in texts written in English~\cite{Letter_Frequency}.
 
-Due to the fact that all scanned documents come from laser printers, it was necessary to take some precautionary measures. Laser printers are known as ''page printers'', while dot matrix printers and inkjet printers are called ''line printers''. This is a crucial difference, and should be considered for more careful study. Line printers print documents line by line from the top of the sheet, keeping a characteristic pattern which periodically repeats for each paper feed. That is, any line printed by this printer model will have basically the same characteristics, regardless of their vertical location in the sheet of paper.
+Due to the fact that all scanned documents come from laser printers, it was necessary to take some precautionary measures. Laser printers are known as ''page printers'', while dot matrix printers and inkjet printers are called ''line printers''. This is a crucial difference, and should be considered for more careful study. Line printers print documents line by line from the top of the sheet, keeping a characteristic pattern which periodically repeats for each paper feed. That is, any line printed by this printer model will have basically the same characteristics, regardless of their vertical location in the sheet of paper. Page printers, instead, do not print documents line by line. In this case, an image of the entire page is ''printed'' on the photoreceptor drum by a laser unit. This image attracts toner particles, and then transfers it to the paper sheet. Finally a fuser unit heats the paper, so the toner melts and attach it. Figure \ref{fig:page_printer} shows a default page printer schema.
+
+\begin{figure}
+\begin{center}
+	\includegraphics[width=0.99\columnwidth]{page_printer}
+	\caption{Default page printer schema~\cite{Document_Analysis}.}
+\label{fig:page_printer}   
+\end{center} 
+\end{figure}
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiments and Discussion}
 
 \begin{table}
+\caption{Printers used in this work}
 \begin{center}
 \begin{tabular}{l*{2}{c}r}
 Printer           & Documents \\
