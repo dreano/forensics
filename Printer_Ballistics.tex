@@ -44,6 +44,8 @@ We describe a technique for ballistics of printed documents, that is, link a pri
 
 %%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
+\label{sec:introduction}
+
 In August of 2013, a russian man wrote his own small print in a credit card contract~\cite{RT}. The credit card's administrator bank didn't read the amendments made by the client, and just signed and certified the document. The changes included unlimited credit line, 0 percent interest rates and no fees. When the bank decided to terminate the man's credit card, because overdue payments, he sued them for more than 24 million rubles (US\$ 727.000). How could the bank prove the falsification?
 
 Altough we are living in a digital era, printed documents still are a significant part of our day by day. Likewise, with the constant reduction in prices and increase in quality of printing equipment, forgeries become increasingly commonplace.
@@ -54,17 +56,20 @@ Our approach for the analysis of character's texture is as follows. From printed
 
 However, slight imperfections may occur during the printing and/or scanning process of documents. To handle these small errors (or variations), characters were selected from different areas of scanned document, their properties were obtained and then classified using machine learning algorithms.
 
-
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{State-of-the-Art}
+\label{sec:state_of_the_art}
+
 Related work: \cite{Bulan}
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Proposed Solution}
+\label{sec:proposed_solution}
 
 Our solution consist in getting the image of characters selected from scanned documents in grayscale, extract its properties of contrast, correlation, energy and homogeneity - creating a co-occurrence matrix - and cluster them by machine learning algorithms.
 
 \subsection{Printers dataset}
+\label{subsec:printers_dataset}
 
 The documents used for this work were obtained from the Wikipedia site~\cite{Wikipedia}, and were written in English, some of them containing pictures, some not. They were printed by printers listed in Table \ref{tab:printers}. 
 
@@ -100,6 +105,7 @@ These printed documents were scanned at high resolution and saved as Tiff file f
 \end{figure}
 
 \subsection{Characters}
+\label{subsec:characters}
 
 The characters chosen for this work were "e" and "t", both in lowercase, because they are, respectively, the first and second most common letters in texts written in English~\cite{Letter_Frequency}.
 
@@ -115,7 +121,10 @@ Were not considered characters from misaligned documents, i.e. characters from a
 \end{center} 
 \end{figure}
 
+Subsection \ref{subsec:co-occurence_matrix} will be explained in more detail why not use rotated characters.
+
 \subsection{Printers}
+\label{subsec:printers}
 
 Due to the fact that all scanned documents come from laser printers, it was necessary to take some precautionary measures. Laser printers are known as ''page printers'', while dot matrix printers and inkjet printers are called ''line printers''. This is a crucial difference, and should be considered for more careful study. 
 
@@ -145,6 +154,47 @@ Basically, each document has roughly divided into three parts: upper, middle, an
 \end{figure}
 
 Despite showing subtle differences between characters located in different areas of the printout, the print device maintains certain intrinsic characteristics unchanged in all printed characters. Such characteristics can be compared to our fingerprints, making it a way to link a printed character to a particular device.
+
+\subsection{Gray level co-occurence matrix}
+\label{subsec:co-occurence_matrix}
+
+Co-occurrence matrix is a tabulation of how many different combinations of intensity values of pixels (grayscale) occur in an image. The primary use of the co-occurrence matrix is characterized texture in an image from a set of statistics for instances of
+each gray level in different pixels along different directions~\cite{Rocha}.
+
+Co-occurrence matrix considers the relationship between two pixels at a time, one called as ''reference pixel'' and another as ''neighbor pixel''. The neighboring pixel chosen can be neighbor in any direction: east (right), west (left), north (above), south (below), or diagonally, i.e. northeast, northwest, southwest and southeast of each reference pixel. Also the neighborhood need not be exactly one pixel, can be 2, 3, or any value. Each pixel within the image becomes the reference pixel, starting at the top left and proceeding to the lower right. There will be particular cases. For instance, pixels of the right margin of the image does not have neighboring right.
+
+Co-occurrence, in its most general form, can be specified by a matrix of relative frequencies $P (i, j, d,\theta)$, where two neighboring texture elements separated by a distance $d$ in a direction $\theta$ occur in the image, one with the property $i$ and another with property $j$.
+
+From a co-occurrence matrix can be obtained some properties of the analyzed image. For this work, we used the properties of contrast, correlation, energy and homogeneity to create a fingerprint of the printed characters.
+
+Using an example similar to the rotated character, we can compare the value differences in the properties obtained from the co-occurrence matrix (Figure \ref{fig:characters_angle}). In this case, the character on the left was obtained directly from the scanned document, the character on the right is the same character, but rotated -4º.
+
+\begin{figure}
+\begin{center}
+	\includegraphics[width=0.99\columnwidth]{characters_angle}
+	\caption{On the left, a character obtained from a scanned document and to the right, the same character, rotated -4º.}
+\label{fig:characters_angle}   
+\end{center} 
+\end{figure}
+
+Table \ref{tab:properties_differences} lists the differences between the properties of the character sample obtained from the co-occurrence matrix.
+
+\begin{table}
+\label{tab:properties_differences}
+\caption{Differences between an original character and a rotated character.}
+\begin{center}
+\begin{tabular}{l*{3}{c}r}
+Property & Original character & Rotated character (-4º) \\
+\hline
+Contrast & 3.2443 - 2.2905 & 5.1617 - 4.6504 \\
+Correlation & 0.7869 - 0.8502 & 0.6967 - 0.7264 \\
+Energy & 0.1608 - 0.1744 & 0.1106 - 0.1216 \\
+Homogeneity & 0.6946 - 0.7462 & 0.6610 - 0.6995 \\
+\end{tabular}
+\end{center}
+\end{table}
+
+As shown in the Table \ref{tab:properties_differences}, small changes in the alignment of the print / scan can cause large variations in the properties values ​​obtained from the co-occurrence matrix.
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiments and Discussion}
