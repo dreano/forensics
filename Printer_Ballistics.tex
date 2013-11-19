@@ -60,9 +60,11 @@ However, slight imperfections may occur during the printing and/or scanning proc
 \section{State-of-the-Art}
 \label{sec:state_of_the_art}
 
-Literature on the identification of printing devices from their printed documents is not wide in Academia. The work of Kee et al \cite{Printer_Profiling} reports a technique of geometric modeling of degradation caused by the printer. According to the authors, this degradation, measured based on a character basis, is modeled constructing a linear basis from characters commonly found on a printed page. From the point of view of ballistics, the accuracy of the developed technique allows to identify the device that originated the printed pages. According to the authors, the technique allows to distinguish between printers of different brands and models, but not among printers of the same make and model.
+Literature on the identification of printing devices from their printed documents is not wide in Academia. The work of Kee and Farid \cite{Printer_Profiling} reports a technique of geometric modeling of degradation caused by the printer. According to the authors, this degradation, measured based on a character basis, is modeled constructing a linear basis from characters commonly found on a printed page. From the point of view of ballistics, the accuracy of the developed technique allows to identify the device that originated the printed pages. According to the authors, the technique allows to distinguish between printers of different brands and models, but not among printers of the same make and model.
 
 The work Bulan et al \cite{Bulan} demonstrates a technique for analyzing geometric distortions introduced during the printing process of electrophotographic printers (EP). According to the authors, it is first determined the geometric distortion signature to the printer using only printed pages. It is then built up a database and the printer used to print a test page is identified by computing the geometric distortion signature from the printed test page and correlated it with the signatures present in the database. Geometric distortion signature is calculated comparing dot positions extracted from the printed image and estimated dot positions before printing.
+
+The work of Pollard et al \cite{Pollard} presents a general method for extracting a signature print from the outer boundary of a text glyph.
 
 Valuable is also the work of Rocha and Leite \cite{Rocha}. This work deals with the concept of analysis of textures through co-occurrence matrix, used as a cornerstone of the solution proposed by us.
 
@@ -171,7 +173,7 @@ Co-occurrence, in its most general form, can be specified by a matrix of relativ
 
 From a co-occurrence matrix can be obtained some properties of the analyzed image. For this work, we used the properties of contrast, correlation, energy and homogeneity to create a fingerprint of the printed characters.
 
-Using an example similar to the rotated character, we can compare the value differences in the properties obtained from the co-occurrence matrix (Figure \ref{fig:characters_angle}). In this case, the character on the left was obtained directly from the scanned document, the character on the right is the same character, but rotated -4º.
+Using an example similar to the rotated character, we can compare the value differences in the properties obtained from the co-occurrence matrix (Figure \ref{fig:characters_angle}). In this case, the character on the left was obtained directly from the scanned document; character on the right is the same character, but rotated -4º.
 
 \begin{figure}
 \begin{center}
@@ -202,10 +204,15 @@ As shown in the Table \ref{tab:properties_differences}, small changes in the ali
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experiments and Discussion}
-
+\label{sec:experiments}
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions and Future Work}
+\label{sec:conclusions}
 
+\section{Acknowledgements}
+\label{sec:acknownledgements}
+
+We would like to thank Professor Anderson Rocha for providing us with the opportunity to meet and learn about a so interesting subject and his student Giuliano Pinheiro, who provided the dataset of scanned documents, without which this work could not be done.
 
 %%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\small
