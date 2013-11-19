@@ -60,7 +60,11 @@ However, slight imperfections may occur during the printing and/or scanning proc
 \section{State-of-the-Art}
 \label{sec:state_of_the_art}
 
-Related work: \cite{Bulan} \cite{Printer_Profiling}.
+Literature on the identification of printing devices from their printed documents is not wide in Academia. The work of Kee et al \cite{Printer_Profiling} reports a technique of geometric modeling of degradation caused by the printer. According to the authors, this degradation, measured based on a character basis, is modeled constructing a linear basis from characters commonly found on a printed page. From the point of view of ballistics, the accuracy of the developed technique allows to identify the device that originated the printed pages. According to the authors, the technique allows to distinguish between printers of different brands and models, but not among printers of the same make and model.
+
+The work Bulan et al \cite{Bulan} demonstrates a technique for analyzing geometric distortions introduced during the printing process of electrophotographic printers (EP). According to the authors, it is first determined the geometric distortion signature to the printer using only printed pages. It is then built up a database and the printer used to print a test page is identified by computing the geometric distortion signature from the printed test page and correlated it with the signatures present in the database. Geometric distortion signature is calculated comparing dot positions extracted from the printed image and estimated dot positions before printing.
+
+Valuable is also the work of Rocha and Leite \cite{Rocha}. This work deals with the concept of analysis of textures through the co-occurrence matrix, used as a cornerstone of the solution proposed by us.
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Proposed Solution}
