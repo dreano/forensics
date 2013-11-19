@@ -39,18 +39,18 @@ Anderson Rocha\thanks{Institute of Computing, University of Campinas (Unicamp). 
 %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
 \begin{abstract}
-We describe a technique for ballistics of printed documents, that is, link a printed document to a especific printer. The principle of this technique is the analysis of character's texture, extracting some properties from the characters of printed and scanned documents, and relate this properties through a co-occurence matrix. This matrix can be used to create a "fingerprint" of characters (and related printers), that allows identify a specific printer device that print these characters.
+We describe a technique for ballistics of printed documents, that is, link a printed document to a specific printer. The principle of this technique is the analysis of character's texture, by extracting some properties from the characters of the scanned images from the printed documents, and relate this properties through a co-occurrence matrix. This matrix can be used to create a "fingerprint" for the characters related to the same printer, what allows us to identify the specific printer device that printed these characters.
 \end{abstract}
 
 %%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-In August of 2013, a russian man wrote his own small print in a credit card contract~\cite{RT}. The credit card's administrator bank didn't read the amendments made by the client, and just signed and certified the documents. The changes included unlimited credit line, 0 percent interest rates and no fees. When the bank decided to terminate man's credit card, because overdue payments, he sued they for more than 24 million rubles (US\$ 727.000). How the bank could prove the falsification?
+In August of 2013, a russian man wrote his own small print in a credit card contract~\cite{RT}. The credit card's administrator bank didn't read the amendments made by the client, and just signed and certified the document. The changes included unlimited credit line, 0 percent interest rates and no fees. When the bank decided to terminate the man's credit card, because overdue payments, he sued them for more than 24 million rubles (US\$ 727.000). How could the bank prove the falsification?
 
-Altough we are living in a digital era, printed documents still are significant part of our daily. Likewise, with the constant reduction in prices and increase in quality of printing equipment, forgeries become increasingly commonplace.
+Altough we are living in a digital era, printed documents still are a significant part of our day by day. Likewise, with the constant reduction in prices and increase in quality of printing equipment, forgeries become increasingly commonplace.
 
-Legal aspects aside, a way to verify if a document, or a part of it, came from a specific device can be character's texture analysis.
+Legal aspects aside, a way to verify if a document, or a part of it, came from a specific device can be through  character's texture analysis.
 
-Our approach for the analysis of character's texture made up as follows. From printed pages scanned at high resolution, selected characters were extracted. From these characters, we obtained its properties of contrast, correlation, energy and homogeneity, creating with them an co-occurrence matrix. This matrix can be called a ''fingerprint'' of the character. This ''fingerprint'' of  characters is closely related to the printing device which originated it, and can be used to identify which printer was responsible for printing it.
+Our approach for the analysis of character's texture is as follows. From printed pages scanned at high resolution, selected characters were extracted. From these characters, we obtained its properties of contrast, correlation, energy and homogeneity, creating with them a co-occurrence matrix. This matrix can be called a ''fingerprint'' of the character. This ''fingerprint'' of  characters is closely related to the printing device which originated it, and can be used to identify which printer was responsible for printing it.
 
 However, slight imperfections may occur during the printing and/or scanning process of documents. To handle these small errors (or variations), characters were selected from different areas of scanned document, their properties were obtained and then classified using machine learning algorithms.
 
