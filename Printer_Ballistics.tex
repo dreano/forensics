@@ -39,7 +39,7 @@ Anderson Rocha\thanks{Institute of Computing, University of Campinas (Unicamp). 
 %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
 \begin{abstract}
-We describe a technique for ballistics of printed documents, that is, link a printed document to a specific printer. The principle of this technique is the analysis of character's texture, by extracting some properties from the characters of the scanned images from the printed documents, and relate this properties through a co-occurrence matrix. This matrix can be used to create a "fingerprint" for the characters related to the same printer, what allows us to identify the specific printer device that printed these characters.
+We describe a technique for ballistics of printed documents, that is, link a printed document to a specific printer. The principle of this technique is the analysis of character's texture, by extracting some properties from the characters of scanned images from the printed documents, and relate this properties through a co-occurrence matrix. This matrix can be used to create a "fingerprint" for the characters related to the same printer, what allows us to identify the specific printer device that printed these characters.
 \end{abstract}
 
 %%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,7 +89,7 @@ Samsung-CLP315 & 28 \\
 \end{center}
 \end{table}
 
-These documents were scanned at high resolution and saved as Tiff file format (Tagged Image File Format), forming a database. These files were made available through an FTP site~\cite{Printers_dataset}. An example of a typical document used in this study can be seen in Figure \ref{fig:document}.
+These printed documents were scanned at high resolution and saved as Tiff file format (Tagged Image File Format), forming a database. These files were made available through an FTP site~\cite{Printers_dataset}. An example of a typical document used in this study can be seen in Figure \ref{fig:document}.
 
 \begin{figure}
 \begin{center}
@@ -103,9 +103,17 @@ These documents were scanned at high resolution and saved as Tiff file format (T
 
 The characters chosen for this work were "e" and "t", both in lowercase, because they are, respectively, the first and second most common letters in texts written in English~\cite{Letter_Frequency}.
 
+To avoid inconsistencies and / or values "off the curve", we used only characters printed in the same font and size, for all printers. With the same objective, we used only characters printed in normal font, not analyzing characters in bold, italic, underline, strikeout, superscript, subscript, or any other form of letter change.
+
+Were not considered characters from misaligned documents, i.e. characters from apparently obliquely scanned documents.
+
 \subsection{Printers}
 
-Due to the fact that all scanned documents come from laser printers, it was necessary to take some precautionary measures. Laser printers are known as ''page printers'', while dot matrix printers and inkjet printers are called ''line printers''. This is a crucial difference, and should be considered for more careful study. Line printers print documents line by line from the top of the sheet, keeping a characteristic pattern which periodically repeats for each paper feed. That is, any line printed by this printer model will have basically the same characteristics, regardless of their vertical location in the sheet of paper. Page printers, instead, do not print documents line by line. In this case, an image of the entire page is ''printed'' on the photoreceptor drum by a laser unit. This image attracts toner particles, and then transfers it to the paper sheet. Finally a fuser unit heats the paper, so the toner melts and attach it. Figure \ref{fig:page_printer} shows a default page printer schema.
+Due to the fact that all scanned documents come from laser printers, it was necessary to take some precautionary measures. Laser printers are known as ''page printers'', while dot matrix printers and inkjet printers are called ''line printers''. This is a crucial difference, and should be considered for more careful study. 
+
+Line printers print documents line by line from the top of the sheet, keeping a characteristic pattern which periodically repeats for each paper feed. That is, any line printed by this printer model will have basically the same characteristics, regardless of their vertical location in the paper sheet. 
+
+Page printers, instead, do not print documents line by line. In this case, an image of the entire page is ''printed'' on the photoreceptor drum by a laser unit. This image attracts toner particles, and then transfers it to the paper sheet. Finally, a fuser unit heats the paper, so the toner melts and attach it. Figure \ref{fig:page_printer} shows a default page printer schema.
 
 \begin{figure}
 \begin{center}
@@ -115,8 +123,10 @@ Due to the fact that all scanned documents come from laser printers, it was nece
 \end{center} 
 \end{figure}
 
-By working in this way, page printers do not maintain a characteristic pattern that is repeated line by line across the printed sheet of paper. Due to small imperfections that may exist in the photoreceptor drum, each print area generated by this type of device can present different characteristics.
-Taking into account this fact, it was necessary to obtain characters from different parts of the scanned document. Basically, each document has roughly divided into three parts: upper, middle, and bottom. The Figure \ref{fig:document_areas} shows an example of a document divided in this way. If this article is being viewed in color, the upper part of the figure is in red, the middle, in green and bottom, in blue.
+By working in this way, page printers do not maintain a characteristic pattern that is repeated line by line across the printed paper sheet. Due to small imperfections that may exist in the photoreceptor drum, each print area generated by this type of device can present different characteristics.
+Taking into account this fact, it was necessary to obtain characters from different parts of the scanned document. 
+
+Basically, each document has roughly divided into three parts: upper, middle, and bottom. The Figure \ref{fig:document_areas} shows an example of a document divided in this way. If this article is being viewed in color, the upper part of the figure is in red, the middle, in green and bottom, in blue.
 
 \begin{figure}
 \begin{center}
