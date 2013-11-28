@@ -13,7 +13,7 @@
 \usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
 \usepackage{appendix}
 \input{abaco}
-
+\makeatletter
 \cvprfinalcopy % *** Uncomment this line for the final submission
 \def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
 \ifcvprfinal\pagestyle{empty}\fi
@@ -310,5 +310,29 @@ $$\sum_{i,j} p(i, j)^2$$
 Returns a value that represents the relative proximity of the diagonal elements of the co-occurrence matrix. The range of possible values is between 0 and 1, and the value 1 represents a diagonal matrix.
 
 $$\sum_{i,j} \frac{p(i, j)}{1 + \vert i - j \lvert}$$
+
+\section{Features vectors}
+
+\subsection{Training set}
+
+Figure \ref{fig:feature_vector} shows a portion of the file with the feature vectors for training the classifiers.
+
+\begin{figure*}
+\begin{center}
+	\includegraphics[width=2\columnwidth]{feature_vector}
+	\caption{Feature vector for training.}
+\label{fig:feature_vector}   
+\end{center} 
+\end{figure*}
+
+Figure \ref{fig:validation} shows a portion of the file with the feature vectors for validation.
+
+\begin{figure*}
+\begin{center}
+	\includegraphics[width=2\columnwidth]{validation}
+	\caption{Feature vector for validation.}
+\label{fig:validation}   
+\end{center} 
+\end{figure*}
 
 \end{document}
