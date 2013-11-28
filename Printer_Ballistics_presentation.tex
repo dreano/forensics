@@ -1,0 +1,202 @@
+\documentclass[notes]{beamer}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[english, portuguese]{babel}
+\usepackage[latin1, utf8]{inputenc}
+\usepackage{times}
+\usepackage{multirow}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\setbeamertemplate{caption}[numbered]
+\mode<presentation>
+
+
+{
+  % A tip: pick a theme you like first, and THEN modify the color theme, and then add math content.
+  % Warsaw is the theme selected by default in Beamer's installation sample files.
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% THEME
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+% \usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+ \usetheme{default}
+% \usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+% \usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% COLOR THEME
+  %\usecolortheme{albatross}
+  %\usecolortheme{beetle}
+  %\usecolortheme{crane}
+  %\usecolortheme{default}
+  %\usecolortheme{dolphin}
+  %\usecolortheme{dove}
+  %\usecolortheme{fly}
+  %\usecolortheme{lily}
+  \usecolortheme{orchid}
+  %\usecolortheme{rose}
+  %\usecolortheme{seagull}
+  %\usecolortheme{seahorse}
+  %\usecolortheme{sidebartab}
+  %\usecolortheme{structure}
+  %\usecolortheme{whale}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% OUTER THEME
+  %\useoutertheme{default}
+  %\useoutertheme{infolines}
+  %\useoutertheme{miniframes}
+  %\useoutertheme{shadow}
+  %\useoutertheme{sidebar}
+  %\useoutertheme{smoothbars}
+  %\useoutertheme{smoothtree}
+  %\useoutertheme{split}
+  %\useoutertheme{tree}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%% INNER THEME
+  %\useinnertheme{circles}
+  %\useinnertheme{default}
+  %\useinnertheme{inmargin}
+  %\useinnertheme{rectangles}
+  %\useinnertheme{rounded}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \setbeamercovered{transparent} % or whatever (possibly just delete it)
+  % To change behavior of \uncover from graying out to totally invisible, can change \setbeamercovered to invisible instead of transparent. apparently there are also 'dynamic' modes that make the amount of graying depend on how long it'll take until the thing is uncovered.
+
+}
+
+
+% Get rid of nav bar
+\beamertemplatenavigationsymbolsempty
+
+% Use short top
+\usepackage[headheight=12pt,footheight=12pt]{beamerthemeboxes}
+%\addheadboxtemplate{\color{black}}{
+%\hskip0.3cm
+%\color{white}
+\insertshortauthor
+%\insertframenumber \ \ \ \ \ \ \ 
+%\insertsection \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \insertsubsection
+%\hskip0.3cm}
+%\addheadboxtemplate{\color{black}}{
+%\color{white}
+%\ \ \ \ 
+%\insertsection
+%}
+%\addheadboxtemplate{\color{black}}{
+%\color{white}
+%\ \ \ \ 
+%\insertsubsection
+%}
+\title{Printer Ballistics Through Texture Analysis of Characters}
+\subtitle{}
+
+\def\logounicamp{%
+\resizebox{!}{7.5ex}{\includegraphics{unicamp.pdf}}
+}
+
+\def\logoabaco{%
+\resizebox{!}{7.5ex}{\includegraphics{abaco.pdf}}
+}
+
+\institute{Institute of Computing - Unicamp}
+
+\date{November 29, 2013}
+
+\subject{Talks}
+
+\def\defn#1{{\color{red} #1}}
+% Insere o numero da pagina no rodape.
+
+\setbeamertemplate{headline}[text line]{%
+  \parbox{\linewidth}{\vspace*{8pt}\hfill\insertsection}}
+
+\setbeamertemplate{footline}[text line]{%
+  \parbox{\linewidth}{\vspace*{-8pt}\logounicamp\hfill\institute\hfill\inserttitle
+  \hfill\logoabaco\hfill\insertpagenumber}}
+\setbeamertemplate{navigation symbols}{}
+
+\author{Adriano Ruggero, Gabriel Fernandes, Mário Brito, Maurício Perez}
+
+\AtBeginSection[]{%
+  \begin{frame}
+    \frametitle{Schedule}
+    \tableofcontents[currentsection]
+  \end{frame}
+  \addtocounter{framenumber}{-1}% If you don't want them to affect the slide number
+}
+
+\addto\captionsportuguese{
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+
+
+\section{References}
+\begin{frame} %%[allowframebreaks]
+
+\frametitle{Bibliography}
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
+\end{frame}
+
+%%%%% Thanks page
+\section{}
+\begin{frame}
+\frametitle{Thanks}
+\vskip30pt
+
+\begin{center}
+{\bf \color{alert} Thanks!}
+\end{center}
+
+\vskip30pt
+
+\begin{center}
+
+\vskip12pt
+
+Adriano R. Ruggero, Gabriel Rodrigues, Mário F. Brito, Maurício L. Perez
+
+\end{center}
+
+%%\titlepage
+\end{frame}
+
+\end{document}
