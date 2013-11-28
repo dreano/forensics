@@ -11,6 +11,7 @@
 \usepackage{amssymb}
 \usepackage{color}
 \usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+\usepackage{appendix}
 \input{abaco}
 
 \cvprfinalcopy % *** Uncomment this line for the final submission
@@ -79,25 +80,31 @@ Our solution consist in getting the image of characters selected from scanned do
 
 The documents used for this work were obtained from the Wikipedia site~\cite{Wikipedia}, and were written in English, some of them containing pictures, some not. They were printed by printers listed in Table \ref{tab:printers}. 
 
-\begin{table}
-\label{tab:printers}
+
+
+
+
+
+\begin{table*}
 \caption{Printers used in this work}
+\label{tab:printers}
 \begin{center}
-\begin{tabular}{l*{2}{c}r}
-Printer           & Documents \\
+    \begin{tabular}{ | c | c | c | c |}
+    \hline
+Printer & Documents & Characters ''e'' & Characters ''t'' \\ \hline
+Brother-HL4070CDW & 28 & 252 & 252\\
+Canon-D1150 & 28 & 252 & 252\\
+Canon-MF3240 & 28 & 252 & 252\\
+Canon-MF4370DN & 27 & 252 & 252 \\
+HP-CLJ-CP2025A & 28 & 250 & 250\\
+HP-JL-CP1518 & 0 & 0 & 0\\
+Lexmark-E260D & 0 & 0 & 0\\
+OKI-C330 & 0 & 0 & 0\\
+Samsung-CLP315 & 0 & 0 & 0 \\
 \hline
-Brother-HL4070CDW & 28 \\
-Canon-D1150 & 28 \\
-Canon-MF3240 & 28 \\
-Canon-MF4370DN & 28 \\
-HP-CLJ-CP2025A & 28 \\
-HP-JL-CP1518 & 28 \\
-Lexmark-E260D & 28 \\
-OKI-C330 & 28 \\
-Samsung-CLP315 & 28 \\
-\end{tabular}
-\end{center}
-\end{table}
+    \end{tabular}
+\end{center}    
+\end{table*}
 
 These printed documents were scanned at high resolution and saved as Tiff file format (Tagged Image File Format), forming a database. These files were made available through an FTP site~\cite{Printers_dataset}. An example of a typical document used in this study can be seen in Figure \ref{fig:document}.
 
@@ -216,7 +223,7 @@ For the proprieties extraction we used two different neighborhoods show in figur
 \begin{figure}
 \begin{center}
 	\includegraphics[width=0.99\columnwidth]{neighbor}
-	\caption{Neighborhood A, leftmost, and B, rightmost, used in properties extraction (the darker pixel is the pixel-of-interest)}
+	\caption{Neighborhood A, leftmost, and B, rightmost, used in properties extraction (the darker pixel is the pixel-of-interest).}
 \label{fig:neighbor}   
 \end{center} 
 \end{figure}
@@ -265,5 +272,9 @@ We would like to thank Professor Anderson Rocha for providing us with the opport
 \bibliographystyle{unsrt}
 \bibliography{references_printer}
 }
+
+\appendix
+
+
 
 \end{document}
