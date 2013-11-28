@@ -283,6 +283,18 @@ We would like to thank Professor Anderson Rocha for providing us with the opport
 
 Returns the measure of contrast between the pixel of interest and neighboring pixel. For a constant image (same shade of gray to the full extent) the value is 0.
 
+$$\sum_{i,j}\vert i - j \lvert^2 p(i,j)$$
 
+\subsection{Co-relation}
+
+Returns the measure of how much the pixel is related to its neighbor. The range is from -1 to 1, where 1 means a fully correlated and -1, totally uncorrelated image.
+
+$$\sum_{i,j} \frac{(i - \mu i) (j - \mu j) p(i,j)} {\sigma_i \sigma_j}$$
+
+\subsection{Energy}
+
+Returns the sum of squared raised elements within the array. The range of possible values is from 0 to 1. A constant image (same shade of gray in all its extension) has value 1.
+
+$$\sum_{i,j} p(i, j)^2$$
 
 \end{document}
