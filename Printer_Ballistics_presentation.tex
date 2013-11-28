@@ -140,18 +140,13 @@
 
 \author{Adriano Ruggero, Gabriel Fernandes, Mário Brito, Maurício Perez}
 
-\AtBeginSection[]{%
-  \begin{frame}
-    \frametitle{Outline}
-    \tableofcontents[currentsection]
-  \end{frame}
   \addtocounter{framenumber}{-1}% If you don't want them to affect the slide number
-}
 
-%\addto\captionsportuguese{
-%\renewcommand{\figurename}{Figure}
-%\renewcommand{\tablename}{Table}
-%}
+
+\addto\captionsportuguese{
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
+}
 
 \begin{document}
 
@@ -164,11 +159,10 @@
   \tableofcontents
 \end{frame}
 
-\section{Introduction}
 \begin{frame}
 
 \begin{block}{Motivation}
-
+\section{Motivation}
 \begin{itemize}
 
 \item We (still) live in a ''paper era''
@@ -191,7 +185,7 @@
 \end{frame}
 
 \begin{frame}
-
+\section{Introduction}
 \begin{block}{Printer attribution}
 
 A way to do this is called ''Printer Attribution''
@@ -199,7 +193,7 @@ A way to do this is called ''Printer Attribution''
 \end{block}
 
 \begin{block}{Methods}
-
+\section{Printer attribution}
 \begin{itemize}
 
 \item Geometric distortion
@@ -243,8 +237,283 @@ A way to do this is called ''Printer Attribution''
 
 \end{frame}
 
+\begin{frame}
+\section{State-of-the-art}
+\begin{block}{State-of-the-art}
+
+\begin{itemize}
+
+\item \textbf{Bulan et al\footnote{Geometric Distortion Signatures for Printer Identification\cite{Geometric_Distortion}}:} a method for
+analyzing geometric distortions introduced during the printing process of electrophotographic printers (EP).
+
+\item \textbf{Kee and Farid\footnote{Printer Profiling for Forensics and Ballistics\cite{Printer_Profiling}}:} a method of geometric modeling of degradation caused by the printer.
+
+\end{itemize}
+
+\end{block}
+{\let\thefootnote\relax\footnotetext{}}
+\end{frame}
+
+\begin{frame}
+\section{Proposed solution}
+\begin{block}{Proposed solution}
+
+\begin{itemize}
+
+\item Get the image of characters selected from scanned documents (grayscale)
+
+\item Create a co-occurrence matrix
+
+\item Extract its properties (contrast, correlation, energy and homogeneity)
+
+\item Create a feature vector from this properties
+
+\item Use machine learning algorithms to classify them
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Printers}
+
+\begin{table}
+\caption{Printers used in this work}
+\label{tab:printers}
+\begin{small}
+\begin{center}
+\begin{tabular}{ | c | c | c | c |}
+\hline
+Printer & Documents & Characters ''e'' & Characters ''t'' \\ \hline
+Brother-HL4070CDW & 28 & 252 & 252\\
+Canon-D1150 & 28 & 252 & 252\\
+Canon-MF3240 & 28 & 252 & 252\\
+Canon-MF4370DN & 27 & 252 & 252 \\
+HP-CLJ-CP2025A & 28 & 250 & 250\\
+Lexmark-E260D & 30 & 636 & 629\\
+\hline
+\end{tabular}
+\end{center}   
+\end{small} 
+\end{table}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Characters}
+
+\begin{itemize}
+
+\item Characters ''e'' and ''t'' (most common in English texts)
+
+\item Same size, same font, no texts effects
+
+\item Misaligned characters were summarily discarded
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Differences between aligned and misaligned characters}
+
+\begin{table}
+\label{tab:properties_differences}
+\caption{Differences between an original character and a rotated character.}
+\begin{center}
+\begin{tabular}{l*{3}{c}r}
+Property & Original character & Rotated character (-4º) \\
+\hline
+Contrast & 3.2443 - 2.2905 & 5.1617 - 4.6504 \\
+Correlation & 0.7869 - 0.8502 & 0.6967 - 0.7264 \\
+Energy & 0.1608 - 0.1744 & 0.1106 - 0.1216 \\
+Homogeneity & 0.6946 - 0.7462 & 0.6610 - 0.6995 \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Something about printers}
+
+\begin{itemize}
+
+\item All documents came from laser printers, so...\pause
+
+\begin{itemize}
+
+\item we need to understand how they works!
+
+\end{itemize}
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Default laser printer schema}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{page_printer}
+\label{fig:page_printer}
+\end{figure}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Division of document areas}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.3]{document_areas}
+\label{fig:document_areas}
+\end{figure}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Gray level co-occurrence matrix}
+
+The primary use of the co-occurrence matrix is characterized texture in an image from a set of statistics for instances of each gray level in different pixels
+along different directions\footnote{Classificação de texturas a partir de vetores de atributos e função de distribuição de probabilidades\cite{Rocha}}.
+
+\end{block}
+
+\begin{block}{In other words...}
+
+\begin{itemize}
+
+\item A matrix of relative frequencies $P (i, j, d, \theta)$
+
+\begin{itemize}
+
+\item $p$ represents the pixel-of-interest
+
+\item $i$ and $j$ represents the properties
+
+\item $\theta$ represents the distance
+
+\end{itemize}
+
+\end{itemize}
+
+\end{block}
+
+{\let\thefootnote\relax\footnotetext{}}
+
+\end{frame}
+
+\begin{frame}
+\section{Experiments and discussion}
+
+\begin{block}{Character's selection and extraction}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{ants}
+\label{fig:ants}
+\caption{A ant's work!\footnote{The Wifey Journals\cite{Ants}}}
+\end{figure}
+
+\end{block}
+{\let\thefootnote\relax\footnotetext{}}
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Neighborhood}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.3]{neighbor}
+\label{fig:neighbor}
+\caption{Neighborhood A, leftmost, and B, rightmost, used in
+properties extraction.}
+\end{figure}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Algorithms versus correct classification}
+
+\begin{table}
+\label{tab:correct_classification}
+\caption{Percentage of correct classifications of printers.}
+\begin{center}
+\begin{small} 
+\setlength{\tabcolsep}{3pt} 
+\begin{tabular}{l*{5}{c}r} & \multicolumn{2}{c}{Neighborhood A} & \multicolumn{2}{c}{Neighborhood B}\\ \cline{1-5}
+Method & Chars e’s & Chars t’s & Chars e’s & Chars t’s \\
+\hline
+Logistic & 81 & 81.3 & 85 & 84.6\\
+KStar & 77.6 & 83 & 72 & 79.6\\
+RotationForest & 83.1 & 85 & 81.7 & 85.7\\
+NNge & 74.1 & 80.2 & 72.2 & 67.8\\
+LMT & 83.8 & 84.6 & 82.7 & 85.5\\
+
+\end{tabular}
+\end{small}
+\end{center}
+\end{table}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\section{Conclusions and future work}
+
+\begin{block}{Conclusions}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\section{Acknowledgements}
+
+\begin{block}{Acknowledgements}
+
+\begin{itemize}
+
+\item Professor Anderson Rocha
+
+\item Giuliano Pinheiro
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
 \section{References}
-\begin{frame} %%[allowframebreaks]
+\begin{frame} [allowframebreaks]
 
 \frametitle{Bibliography}
 

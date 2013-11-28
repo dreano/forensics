@@ -73,7 +73,7 @@ Valuable is also the work of Rocha and Leite \cite{Rocha}. This work deals with 
 \section{Proposed Solution}
 \label{sec:proposed_solution}
 
-Our solution consist in getting the image of characters selected from scanned documents in grayscale, extract its properties of contrast, correlation, energy and homogeneity - creating a co-occurrence matrix - and cluster them by machine learning algorithms.
+Our solution consist in getting the image of characters selected from scanned documents in grayscale, create a co-occurrence matrix, extract its properties of contrast, correlation, energy and homogeneity - creating a feature vector - and cluster them by machine learning algorithms.
 
 \subsection{Printers dataset}
 \label{subsec:printers_dataset}
@@ -211,13 +211,13 @@ Details on how to calculate values of contrast, correlation, energy and homogene
 \section{Experiments and Discussion}
 \label{sec:experiments}
 
-As a starting point for our experiments, it was necessary to select the desired characters from the documents on which the proprieties would be extracted. With the extracted proprieties of contrast, correlation, energy and homogeneity from the characters, we started evaluating the best methodology and machine learning algorithms for our solution. In the first instance, we needed to determine the best options for classifying the characters and attributing them to a Printer. But our final goal is not to attribute the characters to a printer, but a whole document, so in the next step, we propose a way of attributing the printer based on the classification of the characters.
+As a starting point for our experiments, it was necessary to select the desired characters from the documents on which the properties would be extracted. With the extracted proprieties of contrast, correlation, energy and homogeneity from the characters, we started evaluating the best methodology and machine learning algorithms for our solution. In the first instance, we needed to determine the best options for classifying the characters and attributing them to a Printer. But our final goal is not to attribute the characters to a printer, but a whole document, so in the next step, we propose a way of attributing the printer based on the classification of the characters.
 
-\subsection{Characters Selection and Proprieties Extraction}
+\subsection{Characters Selection and Properties Extraction}
 
 First we selected three characters from each one of the three sections from a document, and repeated that for all documents. There were 3x3x28 = 252 characters selected for each printer, what gave us a total of 1512.
 
-For the proprieties extraction we used two different neighborhoods show in figure \ref{fig:neighbor}. From the first neighborhood we gathered two characteristics per type (contrast, correlation, energy and homogeneity), originating a vector of descriptors of eight values for a character. The second one gave us four per type, in other words, a sixteen sized vector.
+For the properties extraction we used two different neighborhoods show in figure \ref{fig:neighbor}. From the first neighborhood we gathered two characteristics per type (contrast, correlation, energy and homogeneity), originating a vector of descriptors of eight values for a character. The second one gave us four per type, in other words, a sixteen sized vector.
 
 \begin{figure}
 \begin{center}
@@ -281,7 +281,7 @@ We would like to thank Professor Anderson Rocha for providing us with the opport
 
 $p$ represents the pixel-of-interest.
 
-$i$ and $j$ represents the positions of the values of the co-occurrence matrix.
+$i$ and $j$ represents the value of the properties.
 
 $\mu i$ and $\mu j$ represents the mean of $i$ and $j$, respectively. 
 
