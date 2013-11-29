@@ -297,8 +297,8 @@ Brother-HL4070CDW & 28 & 252 & 252\\
 Canon-D1150 & 28 & 252 & 252\\
 Canon-MF3240 & 28 & 252 & 252\\
 Canon-MF4370DN & 27 & 252 & 252 \\
-HP-CLJ-CP2025A & 28 & 250 & 250\\
-Lexmark-E260D & 30 & 636 & 629\\
+HP-CLJ-CP2025A & 28 & 252 & 252\\
+Lexmark-E260D & 28 & 252 & 252\\
 \hline
 \end{tabular}
 \end{center}   
@@ -493,9 +493,65 @@ LMT & 83.8 & 84.6 & 82.7 & 85.5\\
 \end{frame}
 
 \begin{frame}
+
+\begin{block}{Printer attribution results}
+
+\begin{table}
+\caption{Percentage of correct printer attribution.}
+\label{tab:correct_printer_attribution}
+\begin{center}
+\begin{small} 
+\setlength{\tabcolsep}{3pt} 
+\begin{tabular}{l*{4}{c}r} \cline{1-4}
+Method & Chars e’s & Chars t’s & Chars e’s and t’s \\
+\hline
+Logistic & 21/24 = 87.5\% & 22/24 = 91.7\% & 21/24 = 87.5\% \\
+
+RotationForest & 21/ 24 = 87.5\% & 21/24 = 87.5\% & 22/24 = 91.7\% \\
+
+LMT & 21/24 = 87.5\% & 21/24 = 87.5\% & 22/24 = 91.7\% \\
+
+\end{tabular}
+\end{small}
+\end{center}
+\end{table}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
 \section{Conclusions and future work}
 
 \begin{block}{Conclusions}
+
+\begin{itemize}
+
+\item Is possible assign a document to a printer analyzing the texture of its characters
+
+\item Greater feature vectors doesn’t mean a better classifier
+
+\item Character choice would have probably low impact on the results
+
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Future work}
+
+\begin{itemize}
+
+\item Extract more varied or more characters
+
+\item Try other texture analyzers, such as HOG (Histograms of Oriented Gradients Extract) or LBP (Local Binary Patterns), and no GLCM.
+
+\item A (semi) automated method to extract the characters would be of great benefit to researchers in this field.
+
+\end{itemize}
 
 \end{block}
 
