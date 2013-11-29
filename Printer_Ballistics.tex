@@ -211,13 +211,13 @@ Details on how to calculate values of contrast, correlation, energy and homogene
 \section{Experiments and Discussion}
 \label{sec:experiments}
 
-As a starting point for our experiments, it was necessary to select the desired characters from the documents on which the properties would be extracted. With the extracted proprieties of contrast, correlation, energy and homogeneity from the characters, we started evaluating the best methodology and machine learning algorithms for our solution. In the first instance, we needed to determine the best options for classifying the characters and attributing them to a Printer. But our final goal is not to attribute the characters to a printer, but a whole document, so in the next step, we propose a way of attributing the printer based on the classification of the characters.
+As a starting point for our experiments, it was necessary to select the desired characters from the documents on which the properties would be extracted. With the extracted properties of contrast, correlation, energy and homogeneity from the characters, we started evaluating the best methodology and machine learning algorithms for our solution. In the first instance, we needed to determine the best options for classifying the characters and attributing them to a Printer. But our final goal is not to attribute the characters to a printer, but a whole document, so, in the next step, we propose a way of attributing the printer based on the classification of the characters.
 
 \subsection{Characters Selection and Properties Extraction}
 
 First we selected three characters from each one of the three sections from a document, and repeated that for all documents. There were 3x3x28 = 252 characters selected for each printer, what gave us a total of 1512.
 
-For the properties extraction we used two different neighborhoods show in figure \ref{fig:neighbor}. From the first neighborhood we gathered two characteristics per type (contrast, correlation, energy and homogeneity), originating a vector of descriptors of eight values for a character. The second one gave us four per type, in other words, a sixteen sized vector.
+For the properties extraction we used two different neighborhoods show in figure \ref{fig:neighbor}. From the first neighborhood we gathered two characteristics per type (contrast, correlation, energy and homogeneity), originating a feature vector of eight values for a character. The second one gave us four per type, in other words, a sixteen sized vector.
 
 \begin{figure}
 \begin{center}
@@ -229,7 +229,7 @@ For the properties extraction we used two different neighborhoods show in figure
 
 \subsection{Characters Classification}
 
-The just acquired descriptors are used for evaluation the available classification algorithms. For this evaluation it was separated 66\% of the chars to be used as training (1008) and the rest for testing (504). From them we separate the most prominent and present the results in table \ref{tab:correct_classification}.
+The just acquired features are used for evaluation the available classification algorithms. For this evaluation it was separated 66\% of the chars to be used as training (1008) and the rest for testing (504). From them we separate the most prominent and present the results in table \ref{tab:correct_classification}.
 
 \begin{table}
 \caption{Percentage of correct classifications of printers.}
@@ -251,15 +251,47 @@ LMT & 83.8 & 84.6 & 82.7 & 85.5\\
 \end{center}
 \end{table}
 
-Analyzing the results we can see a slightly better classification on the characters ''t'', perhaps they are more unique for each printer. The results also show that using a neighborhood of four pixels for many cases made the classification worst, what was against our intuition since its descriptors were longer than of the other neighborhood we used.
+Analyzing the results we can see a slightly better classification on the characters ''t'' (perhaps they are more unique for each printer). The results also show that using a neighborhood of four pixels, for many cases, made the classification worst, what was against our intuition, since its descriptors were longer than of the other neighborhood we used.
 
 \subsection{Printer Attribution}
 
-As said before, attributing a printer to the character is not the main objective, so it was necessary to define a logical output from the classified characters obtained in the previous step. For this purpose we choose to attribute a document to the printer that had most classified characters on it.
+As said before, attributing a printer to the character is not the main objective, so it was necessary to define a logical output from the classified characters obtained in the previous step. For this purpose we choose to attribute a document to the printer that had most classified characters on the document sample of characters.
+
+Since there were no significant difference between Neighborhoods A and B, we tested using only the first. For this tests it were separated 4 documents per printer, 24 in total, and the rest of the documents were used for training. We choose to use only the three classifier methods that had the best results in characters classification. The printer attribution results are present in table \ref{tab:correct_printer_attribution}.
+
+\begin{table}
+\caption{Percentage of correct printer attribution.}
+\label{tab:correct_printer_attribution}
+\begin{center}
+\begin{small} 
+\setlength{\tabcolsep}{3pt} 
+\begin{tabular}{l*{4}{c}r} \cline{1-4}
+Method & Chars e’s & Chars t’s & Chars e’s and t’s \\
+\hline
+Logistic & 21/24 = 87.5\% & 22/24 = 91.7\% & 21/24 = 87.5\% \\
+
+RotationForest & 21/ 24 = 87.5\% & 21/24 = 87.5\% & 22/24 = 91.7\% \\
+
+LMT & 21/24 = 87.5\% & 21/24 = 87.5\% & 22/24 = 91.7\% \\
+
+\end{tabular}
+\end{small}
+\end{center}
+\end{table}
+
+Again, it is shown that using only characters ''e'' or only characters ''t'' we have almost the same correct classification rate. If we combine the two characters classification and use it for attribution there is a small improvement on the results.
 
 %%% Add section %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions and Future Work}
 \label{sec:conclusions}
+
+In this article we have described a technique for printer attribution based on the properties extracted from the character’s texture of a document. These properties were contrast, correlation, energy and homogeneity, and could be used to create a signature for the printer that generated the document. 
+
+The feature vector size, formed by these properties, varies depending on the neighborhood defined for the generation of the Co-occurrence matrix. In the experiments made we used two different neighborhoods, and it was shown that a greater feature vector doesn’t mean we will have a better classifier. Still, there is room for more tests in this aspect, experiments with other neighborhoods size and in different directions must be done for identifying the best parameters. Another consideration that can be taken in account is if all properties extracted from the co-occurrence matrix should be used, perhaps different combinations of them can bring better results.
+
+For the experiments done, we used only the characters ''e'' and ''t''. Anyhow, the results made us believe that the character choice would have probably low impact on the results obtained, since in some methods for classification there is a higher accuracy and for others a lower when we alternate between ''e'' and ''t''. What can have a better impact is the number of characters selection from each part of the document (we picked only a small portion of them).
+
+Our work presents an unexplored characteristic from the printers uniqueness printing process that can be extracted afterwards with the scanned documents created on them. It was also shown that this characteristic can be used in ballistics for printer attribution but that still needs further investigation and experiments on the best methodology for achieving optimal results.
 
 \section{Acknowledgements}
 \label{sec:acknownledgements}
